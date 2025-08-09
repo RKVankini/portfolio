@@ -1,26 +1,45 @@
+<!-- projects.html (simple starter) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Rama Krishna</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Projects</h1>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="project">
-            <h2>3-Tier AWS Architecture</h2>
-            <p>Deployed a scalable 3-tier architecture with EC2, ALB, ASG, and RDS using Terraform.</p>
-            <a href="https://github.com/RKVankini">View Code</a>
-        </section>
-    </main>
+  <main class="container projects-page">
+    <section class="projects-list">
+      <article class="project-card">
+        <h2>3-Tier AWS Architecture</h2>
+        <p>Designed and deployed a three-tier architecture using Terraform: VPC, public/private subnets, ALB, Auto Scaling Group, and RDS in private subnets.</p>
+        <a href="https://github.com/RKVankini" target="_blank" rel="noreferrer">View on GitHub</a>
+      </article>
+
+      <article class="project-card">
+        <h2>Frontend + Backend Deployment</h2>
+        <p>Deployed a Node.js backend and static frontend on separate Ubuntu EC2 instances, configured Route53 private hosted zone and connected to RDS.</p>
+        <a href="https://github.com/RKVankini" target="_blank" rel="noreferrer">View on GitHub</a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Rama Krishna Vankini</p>
+    </div>
+  </footer>
 </body>
 </html>

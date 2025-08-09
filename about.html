@@ -1,25 +1,53 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Rama Krishna Vankini</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>About Me</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">About</h1>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>Hi, I'm Rama Krishna</h2>
-            <p>I’m an AWS Cloud Enthusiast with 1 year of experience, passionate about automation, deployment, and scalable architectures.</p>
-        </section>
-    </main>
+  <main class="container about-page">
+    <section class="about-grid">
+      <div class="about-photo">
+        <img src="images/profile.jpg" alt="Rama Krishna" />
+      </div>
+      <div class="about-content">
+        <h2>Hi, I'm Rama Krishna</h2>
+        <p>I am an AWS Cloud Enthusiast and DevOps Engineer with hands-on experience in deploying, automating, and managing cloud infrastructure using AWS, Terraform, and related DevOps tools. I enjoy building scalable and maintainable systems, and learning new technologies.</p>
+
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>AWS: EC2, S3, VPC, Route 53, CloudFront, RDS, Lambda</li>
+          <li>Infrastructure as Code: Terraform</li>
+          <li>Languages: Python, Bash</li>
+          <li>CI/CD & Monitoring: Jenkins, GitHub Actions, Prometheus, Grafana</li>
+        </ul>
+
+        <h3>Experience & Projects</h3>
+        <p>Worked on deploying frontend and backend applications on Ubuntu EC2 instances, provisioning RDS databases, configuring Route53 private hosted zones, and automating deployments with Terraform. I also have experience with monitoring solutions like Prometheus and Grafana.</p>
+
+        <a class="cta-inline" href="projects.html">View my projects →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Rama Krishna Vankini</p>
+    </div>
+  </footer>
 </body>
 </html>
