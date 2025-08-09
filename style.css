@@ -29,7 +29,28 @@ header, main, footer {
   text-align: center;
 }
 
-.hero h2 {
+/* .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+} */
+
+.hero h2 {
+  font-size: 3rem; /* Bigger heading */
+  color: #ffffff; /* White for visibility */
+  margin-bottom: 1rem;
 }
+
+.hero p {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Light gray */
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
