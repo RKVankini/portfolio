@@ -36,7 +36,7 @@ header, main, footer {
 
 .hero h2 {
   font-size: 3rem; /* Bigger heading */
-  color: #ffffff; /* White for visibility */
+  color: whitesmoke; /* White for visibility */
   margin-bottom: 1rem;
 }
 
