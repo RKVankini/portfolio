@@ -63,3 +63,15 @@ header, main, footer {
   margin: 0 auto 20px auto;
 }
 
+h1 {
+  color: #f9f5f5; /* dark gray */
+}
+
+h2 {
+  color: #f2f4f7; /* blue */
+}
+
+p {
+  color: #ffffff; /* medium gray */
+}
+
