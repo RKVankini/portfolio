@@ -4,43 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Two | Rama Krishna Vankini</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7f9fc;
+            color: #333;
+        }
+        header {
+            background: #1b263b;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            height: 180px;
+            background: linear-gradient(90deg, #0d1b2a, #1b263b);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            opacity: 0.85;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+        h2 {
+            color: #1b263b;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background: #e05500;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">RK</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="project-detail">
-        <div class="container">
-            <h2>Project Two</h2>
-            <p>This is the detailed description of Project Two. Include information like:</p>
-            <ul>
-                <li>Goal of the project</li>
-                <li>Technologies used</li>
-                <li>Special features</li>
-                <li>Outcome/results</li>
-            </ul>
-            <p>
-                <a href="https://github.com/YourGitHubUsername/Project2" target="_blank" class="btn">
-                    View on GitHub
-                </a>
-                <a href="projects.html" class="btn">Back to Projects</a>
-            </p>
-        </div>
-    </section>
+<header>
+    <h1 class="logo">RK</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <footer>
-        <p>&copy; 2025 Rama Krishna Vankini</p>
-    </footer>
+<section class="hero">
+    <h1>Project Two</h1>
+    <p>Advanced and innovative solution focusing on performance and scalability.</p>
+</section>
+
+<section class="content">
+    <h2>About This Project</h2>
+    <p>This project was designed to solve challenges in <strong>streamlining product inventory tracking and order fulfillment</strong> using cutting-edge 
+    technologies and efficient architectural design.</p>
+
+    <h2>Purpose</h2>
+    <p>To create a high-performance application that can handle large-scale operations while maintaining ease of use.</p>
+
+    <h2>Tech Stack</h2>
+    <ul>
+        <li>Frontend: HTML, CSS, JavaScript (React)</li>
+        <li>Backend: Node.js with Express</li>
+        <li>Database: PostgreSQL</li>
+        <li>Cloud: AWS Lambda + API Gateway</li>
+    </ul>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li>Optimized database queries for speed</li>
+        <li>Cloud-native deployment with serverless functions</li>
+        <li>Scalable architecture supporting high traffic</li>
+        <li>Intuitive user dashboard</li>
+    </ul>
+
+    <h2>Workflow</h2>
+    <ol>
+        <li>Data ingestion from multiple sources</li>
+        <li>Processing via backend services</li>
+        <li>Storage and indexing for fast retrieval</li>
+        <li>Frontend rendering with dynamic updates</li>
+    </ol>
+
+    <h2>Explore More Projects</h2>
+    <a href="project1.html" class="btn">← Project One</a>
+    <a href="project3.html" class="btn">Project Three →</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Rama Krishna Vankini</p>
+</footer>
+
 </body>
 </html>
