@@ -3,70 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project One | Rama Krishna Vankini</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Minimal hero section */
-        .hero {
-            height: 180px;
-            background: linear-gradient(90deg, #0d1b2a, #1b263b);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            max-width: 600px;
-            opacity: 0.85;
-        }
-
-        /* Main content styling */
-        .content {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            line-height: 1.6;
-        }
-
-        h2 {
-            margin-top: 20px;
-            color: #1b263b;
-        }
-
-        ul {
-            margin: 10px 0 20px 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #ff6600;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #e05500;
-        }
-    </style>
+    <title>Project One | Rama Krishna</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Header -->
     <header>
         <div class="container">
@@ -83,58 +23,41 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Project One</h1>
-        <p>A modern, scalable, and user-friendly project built to solve real-world problems efficiently.</p>
+        <div class="hero-content">
+            <h2>Project One</h2>
+            <p>A modern, scalable, and user-friendly project built to solve real-world problems efficiently.</p>
+        </div>
     </section>
 
-    <!-- Main Project Content -->
-    <section class="content">
-        <h2>About This Project</h2>
-        <p>This project was developed to address a key challenge in <strong>automating cloud infrastructure deployment and scaling</strong>. 
-        The goal was to create a solution that is fast, secure, and adaptable for different environments, 
-        ensuring ease of use for both technical and non-technical users.</p>
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container card">
+            <h3>About This Project</h3>
+            <p>
+                This project was developed to address a key challenge in <strong>automating cloud infrastructure deployment and scaling</strong>. 
+                The goal was to create a solution that is fast, secure, and adaptable for different environments, 
+                ensuring ease of use for both technical and non-technical users.
+            </p>
 
-        <h2>Purpose</h2>
-        <p>The main purpose of this project is to <em>streamline workflow</em>, reduce manual tasks, and 
-        increase productivity through automation and intelligent design.</p>
+            <h3>Purpose</h3>
+            <p>
+                The main purpose of this project is to <em>streamline workflow</em>, reduce manual tasks, 
+                and increase productivity through automation and intelligent design.
+            </p>
 
-        <h2>Tech Stack</h2>
-        <ul>
-            <li>Frontend: HTML, CSS, JavaScript</li>
-            <li>Backend: Node.js with Express</li>
-            <li>Database: MongoDB (NoSQL)</li>
-            <li>Hosting: AWS EC2 + S3 for static assets</li>
-            <li>Version Control: Git & GitHub</li>
-        </ul>
+            <h3>Tech Stack</h3>
+            <ul>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Backend:</strong> Node.js with Express</li>
+                <li><strong>Database:</strong> MongoDB (NoSQL)</li>
+            </ul>
 
-        <h2>Key Features</h2>
-        <ul>
-            <li>Responsive and mobile-friendly interface</li>
-            <li>Secure authentication and authorization</li>
-            <li>REST API for data handling</li>
-            <li>Real-time updates using WebSockets</li>
-            <li>Automated deployment pipeline</li>
-        </ul>
-
-        <h2>Workflow</h2>
-        <p>The application follows a simple yet effective workflow:
-            <ol>
-                <li>User signs up or logs in securely.</li>
-                <li>Data is fetched from the backend API and displayed dynamically.</li>
-                <li>Users can update, delete, or add new records in real time.</li>
-                <li>All changes are synced to the database instantly.</li>
-            </ol>
-        </p>
-
-        <h2>Explore More Projects</h2>
-    <a href="project2.html" class="btn">Project Two →</a>
-    <a href="project3.html" class="btn">Project Three →</a>
+            <!-- Navigation Buttons -->
+            <div class="project-nav">
+                <a href="project2.html" class="btn">Go to Project Two</a>
+                <a href="project3.html" class="btn">Go to Project Three</a>
+            </div>
+        </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Rama Krishna Vankini</p>
-    </footer>
-
 </body>
 </html>
