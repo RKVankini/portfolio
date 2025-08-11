@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project One | Rama Krishna Vankini</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            background: url('images/project1-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .project-content h2 {
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e65c00;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -21,23 +61,24 @@
         </div>
     </header>
 
-    <!-- Project Details -->
-    <section class="project-detail">
-        <div class="container">
-            <h2>Project One</h2>
-            <p>This is the detailed description of Project One. Here, you can include:</p>
-            <ul>
-                <li>Purpose and objectives</li>
-                <li>Technologies used (HTML, CSS, JavaScript, AWS, etc.)</li>
-                <li>Key features implemented</li>
-                <li>Challenges faced and solutions</li>
-            </ul>
-            <p>
-                <a href="https://github.com/YourGitHubUsername/Project1" target="_blank" class="btn">
-                    View on GitHub
-                </a>
-                <a href="projects.html" class="btn">Back to Projects</a>
-            </p>
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Project One</h1>
+        <p>A modern, scalable, and user-friendly project built with cutting-edge technology.</p>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <h2>About This Project</h2>
+        <p>This is the detailed description of Project One. Here you can describe the purpose, goals, and technical details of your project.</p>
+        <ul>
+            <li><strong>Purpose:</strong> Explain the main problem this project solves.</li>
+            <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, AWS, etc.</li>
+            <li><strong>Features:</strong> Responsive UI, fast loading, secure backend.</li>
+        </ul>
+        <div>
+            <a href="https://github.com/YourGitHubUsername/Project1" target="_blank" class="btn">View on GitHub</a>
+            <a href="projects.html" class="btn">Back to Projects</a>
         </div>
     </section>
 
