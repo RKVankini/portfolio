@@ -1,94 +1,60 @@
-<!-- projects.html (simple starter)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Rama Krishna</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Rama Krishna Vankini</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Projects</h1>
-      <nav class="site-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <h1 class="logo">RK</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main class="container projects-page">
-    <section class="projects-list">
-      <article class="project-card">
-        <h2>3-Tier AWS Architecture</h2>
-        <p>Designed and deployed a three-tier architecture using Terraform: VPC, public/private subnets, ALB, Auto Scaling Group, and RDS in private subnets.</p>
-        <a href="https://github.com/RKVankini" target="_blank" rel="noreferrer">View on GitHub</a>
-      </article>
-
-      <article class="project-card">
-        <h2>Frontend + Backend Deployment</h2>
-        <p>Deployed a Node.js backend and static frontend on separate Ubuntu EC2 instances, configured Route53 private hosted zone and connected to RDS.</p>
-        <a href="https://github.com/RKVankini" target="_blank" rel="noreferrer">View on GitHub</a>
-      </article>
-
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Rama Krishna Vankini</p>
-    </div>
-  </footer>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Rama Krishna Vankini</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">RK</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="about.html">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container">
+    <!-- Projects Section -->
     <section class="projects-section">
-      <h1>My Projects</h1>
-      <div class="projects-grid">
-        <article class="project-card">
-          <h2>Project One</h2>
-          <p>A brief description of project one goes here.</p>
-          <a href="#" class="btn">View Details</a>
-        </article>
-        <article class="project-card">
-          <h2>Project Two</h2>
-          <p>A brief description of project two goes here.</p>
-          <a href="#" class="btn">View Details</a>
-        </article>
-        <article class="project-card">
-          <h2>Project Three</h2>
-          <p>A brief description of project three goes here.</p>
-          <a href="#" class="btn">View Details</a>
-        </article>
-      </div>
-    </section>
-  </main>
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
 
-  <footer>
-    <p>© 2025 Rama Krishna Vankini</p>
-  </footer>
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Project One</h3>
+                    <p>A brief description of project one goes here.</p>
+                    <a href="project1.html" class="btn">View Details</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Project Two</h3>
+                    <p>A brief description of project two goes here.</p>
+                    <a href="project2.html" class="btn">View Details</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Project Three</h3>
+                    <p>A brief description of project three goes here.</p>
+                    <a href="project3.html" class="btn">View Details</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rama Krishna Vankini</p>
+    </footer>
 </body>
 </html>
