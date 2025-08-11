@@ -6,85 +6,135 @@
     <title>Project One | Rama Krishna Vankini</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Minimal hero section */
         .hero {
-            background: url('images/project1-banner.jpg') center/cover no-repeat;
+            height: 180px;
+            background: linear-gradient(90deg, #0d1b2a, #1b263b);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 20px 20px; /* Reduced from 80px */
             text-align: center;
+            padding: 20px;
         }
+
         .hero h1 {
-            font-size: 2rem; /* Slightly smaller */
-            margin-bottom: 5px;
+            font-size: 2rem;
+            margin: 0;
         }
+
         .hero p {
             font-size: 1rem;
-            opacity: 0.9;
+            max-width: 600px;
+            opacity: 0.85;
         }
-        .project-content {
-            max-width: 900px;
+
+        /* Main content styling */
+        .content {
+            max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgb(255, 255, 255);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            line-height: 1.6;
         }
-        .project-content h2 {
-            margin-bottom: 15px;
+
+        h2 {
+            margin-top: 20px;
+            color: #1b263b;
         }
+
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            margin-top: 10px;
             background: #ff6600;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            transition: 0.3s;
+            border-radius: 6px;
+            transition: background 0.3s;
         }
+
         .btn:hover {
-            background: #e65c00;
+            background: #e05500;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- Header -->
     <header>
         <div class="container">
             <h1 class="logo">RK</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="about.html">About Me</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Hero Section -->
     <section class="hero">
         <h1>Project One</h1>
-        <p>A modern, scalable, and user-friendly project built with cutting-edge technology.</p>
+        <p>A modern, scalable, and user-friendly project built to solve real-world problems efficiently.</p>
     </section>
 
-    <!-- Project Content -->
-    <section class="project-content">
+    <!-- Main Project Content -->
+    <section class="content">
         <h2>About This Project</h2>
-        <p>This is the detailed description of Project One. Here you can describe the purpose, goals, and technical details of your project.</p>
+        <p>This project was developed to address a key challenge in <strong>[insert problem domain here]</strong>. 
+        The goal was to create a solution that is fast, secure, and adaptable for different environments, 
+        ensuring ease of use for both technical and non-technical users.</p>
+
+        <h2>Purpose</h2>
+        <p>The main purpose of this project is to <em>streamline workflow</em>, reduce manual tasks, and 
+        increase productivity through automation and intelligent design.</p>
+
+        <h2>Tech Stack</h2>
         <ul>
-            <li><strong>Purpose:</strong> Explain the main problem this project solves.</li>
-            <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, AWS, etc.</li>
-            <li><strong>Features:</strong> Responsive UI, fast loading, secure backend.</li>
+            <li>Frontend: HTML, CSS, JavaScript</li>
+            <li>Backend: Node.js with Express</li>
+            <li>Database: MongoDB (NoSQL)</li>
+            <li>Hosting: AWS EC2 + S3 for static assets</li>
+            <li>Version Control: Git & GitHub</li>
         </ul>
-        <div>
-            <a href="https://github.com/YourGitHubUsername/Project1" target="_blank" class="btn">View on GitHub</a>
-            <a href="projects.html" class="btn">Back to Projects</a>
-        </div>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Responsive and mobile-friendly interface</li>
+            <li>Secure authentication and authorization</li>
+            <li>REST API for data handling</li>
+            <li>Real-time updates using WebSockets</li>
+            <li>Automated deployment pipeline</li>
+        </ul>
+
+        <h2>Workflow</h2>
+        <p>The application follows a simple yet effective workflow:
+            <ol>
+                <li>User signs up or logs in securely.</li>
+                <li>Data is fetched from the backend API and displayed dynamically.</li>
+                <li>Users can update, delete, or add new records in real time.</li>
+                <li>All changes are synced to the database instantly.</li>
+            </ol>
+        </p>
+
+        <h2>Live Demo & Source Code</h2>
+        <a href="https://your-live-demo-link.com" target="_blank" class="btn">View Live Demo</a>
+        <a href="https://github.com/yourusername/project1" target="_blank" class="btn">View on GitHub</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Rama Krishna Vankini</p>
     </footer>
+
 </body>
 </html>
