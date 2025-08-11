@@ -1,80 +1,3 @@
-/* body {
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  margin: 0;
-  color: var(--text);
-  background: url('images/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay *
-  z-index: 0;
-}
-
-header, main, footer {
-  position: relative;
-  z-index: 1;
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* .hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-} */
-
-/* .hero h2 {
-  font-size: 3rem; /* Bigger heading *
-  color: whitesmoke; /* White for visibility *
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: white; /* Light gray *
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid white;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
-h1 {
-  color: #f9f5f5; /* dark gray *
-}
-
-h2 {
-  color: #f2f4f7; /* blue *
-}
-
-p {
-  color: #ffffff; /* medium gray *
-} */
-
  /* Reset some default styles */
 * {
   margin: 0;
@@ -255,7 +178,13 @@ footer {
   line-height: 1.6;
 }
 
-.hero-text .btn {
-    display: inline-block;
-    margin: 5px 0;
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* keeps them centered horizontally */
 }
+
+.hero-text .btn {
+    margin: 5px 0; /* space between buttons */
+}
+
