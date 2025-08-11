@@ -6,7 +6,35 @@
     <title>Project One | Rama Krishna Vankini</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Minimal hero section */
+        /* Navigation bar */
+        header {
+            background-color: #1b2a49;
+            padding: 1rem 0;
+        }
+        header .container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        header .logo {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero section */
         .hero {
             height: 180px;
             background: linear-gradient(90deg, #0d1b2a, #1b263b);
@@ -18,12 +46,10 @@
             text-align: center;
             padding: 20px;
         }
-
         .hero h1 {
             font-size: 2rem;
             margin: 0;
         }
-
         .hero p {
             font-size: 1rem;
             max-width: 600px;
@@ -40,16 +66,15 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             line-height: 1.6;
         }
-
         h2 {
             margin-top: 20px;
             color: #1b263b;
         }
-
-        ul {
+        ul, ol {
             margin: 10px 0 20px 20px;
         }
 
+        /* Buttons */
         .btn {
             display: inline-block;
             padding: 10px 20px;
@@ -59,37 +84,33 @@
             border-radius: 6px;
             transition: background 0.3s;
         }
-
         .btn:hover {
             background: #e05500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1b2a49;
+            color: white;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <!-- <header>
+    <header>
         <div class="container">
             <h1 class="logo">RK</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                </ul>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About Me</a>
             </nav>
         </div>
-    </header> -->
-    <header>
-    <h1 class="logo">RK</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About Me</a></li>
-        </ul>
-    </nav>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -127,23 +148,21 @@
         </ul>
 
         <h2>Workflow</h2>
-        <p>The application follows a simple yet effective workflow:
-            <ol>
-                <li>User signs up or logs in securely.</li>
-                <li>Data is fetched from the backend API and displayed dynamically.</li>
-                <li>Users can update, delete, or add new records in real time.</li>
-                <li>All changes are synced to the database instantly.</li>
-            </ol>
-        </p>
+        <ol>
+            <li>User signs up or logs in securely.</li>
+            <li>Data is fetched from the backend API and displayed dynamically.</li>
+            <li>Users can update, delete, or add new records in real time.</li>
+            <li>All changes are synced to the database instantly.</li>
+        </ol>
 
         <h2>Explore More Projects</h2>
-    <a href="project2.html" class="btn">Project Two →</a>
-    <a href="project3.html" class="btn">Project Three →</a>
+        <a href="project2.html" class="btn">Project Two →</a>
+        <a href="project3.html" class="btn">Project Three →</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy;Rama Krishna Vankini</p>
+        <p>&copy; Rama Krishna Vankini</p>
     </footer>
 
 </body>
