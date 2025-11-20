@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Automation & Integration | Rama Krishna Vankini</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project 3 — CI/CD Pipeline (Jenkins → EKS) | Rama Krishna Vankini</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
       <div class="logo">RK</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
     </nav>
@@ -20,42 +20,69 @@
 
   <section class="hero project-hero">
     <div class="hero-text">
-      <h1>AI Automation & Integration</h1>
-      <p>Prototype integrating ML inference, automated workflows, and real-time dashboards.</p>
+      <h1>CI/CD Pipeline — Jenkins • Terraform • Docker • ArgoCD • EKS</h1>
+      <p>End-to-end DevOps pipeline for building, scanning, and deploying containerized applications using GitHub → Jenkins → Docker → Terraform → Amazon EKS with GitOps (ArgoCD).</p>
     </div>
   </section>
 
   <main class="container content">
     <h2>Project Overview</h2>
-    <p>This project focuses on integrating machine learning models with automated pipelines. Data is collected, processed, analyzed through a Python-based ML service, and exposed using REST APIs. The output is visualized on dashboards, enabling automated insights and fast decision‑making.</p>
+    <p>
+      This project implements a production-like CI/CD pipeline for a Node.js web application (Hotstar sample) using Jenkins for orchestration, Terraform for infrastructure provisioning (EKS cluster + supporting resources), Docker for containerization, SonarQube & Trivy for code & image scanning, and ArgoCD for GitOps-based deployments into EKS.
+      The portfolio page below highlights the high-level architecture, pipeline stages, tools used, and the key responsibilities / outcomes.
+    </p>
 
-    <h2>Key Responsibilities</h2>
+    <h2>Architecture Diagram</h2>
+    <!-- Replace the src with your watercolor or pipeline image (recommended filename: images/project3-cicd-watercolor.png) -->
+    <img src="images/project3-cicd.png" alt="CI/CD pipeline architecture: GitHub → Jenkins → SonarQube/Trivy → DockerHub → Terraform → EKS → ArgoCD" style="max-width:100%; border-radius:10px; box-shadow:0 8px 26px rgba(0,0,0,0.08);">
+
+    <h2>CI/CD Pipeline — Stages</h2>
+    <ol>
+      <li><strong>Source:</strong> Developer pushes code to GitHub (branch-based workflows).</li>
+      <li><strong>Build (Jenkins):</strong> Multi-stage Jenkins pipeline checks out code, installs dependencies (npm), runs unit tests, and builds Docker images.</li>
+      <li><strong>Static Analysis:</strong> Jenkins triggers SonarQube scan and fails the pipeline on quality gate failure.</li>
+      <li><strong>Vulnerability Scan:</strong> Jenkins runs Trivy to scan built images for CVEs; pipeline blocks on high-risk findings.</li>
+      <li><strong>Push:</strong> Secure push of signed images to Docker Hub (or private registry) if scans pass.</li>
+      <li><strong>Provision Infra (Terraform):</strong> Terraform modules create EKS cluster, node groups, VPC, IAM roles, and supporting networking.</li>
+      <li><strong>Deploy (GitOps - ArgoCD):</strong> ArgoCD watches the Git repo and applies Kubernetes manifests/Helm charts to the EKS cluster to deploy the app.</li>
+      <li><strong>Observability & Rollback:</strong> Health checks, and rollback on failure via ArgoCD and Kubernetes readiness/liveness probes.</li>
+    </ol>
+
+    <h2>Tools & Tech</h2>
     <ul>
-      <li>Developed FastAPI backend to serve ML model predictions.</li>
-      <li>Designed automated data cleaning and preprocessing workflows.</li>
-      <li>Integrated TensorFlow / scikit-learn models for inference.</li>
-      <li>Stored results in MySQL / MongoDB for fast retrieval.</li>
-      <li>Containerized the entire application using Docker for portability.</li>
-      <li>Built dashboards for visualization and real-time metrics.</li>
+      <li>CI/CD: Jenkins (Declarative pipelines), GitHub</li>
+      <li>Infrastructure: Terraform (modules), AWS EKS, EC2, VPC, IAM</li>
+      <li>Containerization: Docker, Docker Hub</li>
+      <li>Quality & Security: SonarQube (quality gates), Trivy (image scanning)</li>
+      <li>Deployment: ArgoCD (GitOps), Kubernetes manifests / Helm</li>
+      <li>Scripting & Config: Bash, Jenkinsfile, YAML</li>
     </ul>
 
-    <h2>Tech Stack</h2>
+    <h2>Key Responsibilities & Achievements</h2>
     <ul>
-      <li>Frontend: Vue.js</li>
-      <li>Backend: Python (FastAPI)</li>
-      <li>Database: MySQL / MongoDB</li>
-      <li>ML: TensorFlow, scikit-learn</li>
-      <li>Automation: Python scripts</li>
-      <li>Containers: Docker</li>
+      <li>Designed and implemented Jenkins pipelines (build → test → scan → push → provision → deploy) with clear stage gating.</li>
+      <li>Created Terraform modules to provision AWS EKS and related networking resources with remote state and workspaces.</li>
+      <li>Integrated SonarQube for static analysis and enforced quality gates in the pipeline to maintain code health.</li>
+      <li>Added Trivy scanning to detect vulnerabilities in container images and prevent unsafe images from being deployed.</li>
+      <li>Automated container build & registry push, and implemented GitOps deployments via ArgoCD to enable safe, auditable rollouts.</li>
+      <li>Documented the pipeline runbook and demo steps for interview / evaluation (linked PDF below).</li>
     </ul>
 
-    <h2>Screenshot Preview</h2>
-    <div style="text-align:center; margin:20px 0;">
-      <img src="/mnt/data/Screenshot (164).png" alt="Project Screenshot" style="max-width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-      <p style="font-size:0.9rem; color:#666;">Local uploaded screenshot preview</p>
-    </div>
+    <h2>How to run the demo (short)</h2>
+    <ol>
+      <li>Clone repository and open Jenkinsfile to inspect pipeline stages.</li>
+      <li>Ensure Jenkins has credentials: GitHub token, Docker registry credentials, AWS keys with limited IAM role for Terraform.</li>
+      <li>Run pipeline → verify SonarQube and Trivy checks; on success, Terraform applies to provision EKS; ArgoCD syncs app manifests.</li>
+    </ol>
 
-    <a href="projects.html" class="btn">← Back to Projects</a>
+    <h2>Download Full Project Report</h2>
+    <p>
+      For full implementation details, pipeline configs, and screenshots, download the project PDF (detailed):  
+      <a href="/mnt/data/Devops project-cicd with jenkins-sample-hotstar.pdf" download>Download Project PDF (full pipeline & configs)</a>
+      <br><small style="color:#475569">(When you add the PDF to your repo or hosting, update the link to the public path e.g. <code>docs/project3-hotstar.pdf</code> or <code>assets/project3-hotstar.pdf</code>.)</small>
+    </p>
+
+    <p style="margin-top:1rem;"><a href="projects.html" class="btn">← Back to Projects</a></p>
   </main>
 
   <footer>
