@@ -3,8 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project 1 — Highly Available AWS Multi-Region 3‑Tier Architecture | Rama Krishna Vankini</title>
+  <title>Project 1 — Highly Available AWS Multi-Region 3-Tier Architecture | Rama Krishna Vankini</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-hero{
+      padding:4rem 1rem;
+      background:#f0f6ff;
+      text-align:center;
+    }
+    .project-hero h1{font-size:2rem;margin-bottom:0.5rem;}
+    .project-hero p{max-width:700px;margin:auto;color:#555;}
+
+    .content img.diagram{
+      max-width:100%;
+      border-radius:10px;
+      box-shadow:0 8px 26px rgba(0,0,0,0.08);
+      margin:1rem 0;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#0b5394;
+      padding:10px 16px;
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+      margin-top:1rem;
+    }
+
+    main.container{max-width:900px;margin:auto;padding:1rem;}
+
+    footer{text-align:center;margin:3rem 0;color:#666;}
+  </style>
 </head>
 <body>
   <header>
@@ -19,57 +49,51 @@
   </header>
 
   <section class="hero project-hero">
-    <div class="hero-text">
-      <h1>Highly Available AWS Multi‑Region 3‑Tier Architecture</h1>
-      <p>End‑to‑end multi‑region 3‑tier infrastructure on AWS with failover using Route 53, CloudFront, ALB, ASG, and Multi‑AZ RDS (read‑replica), built with a warm‑standby DR strategy.</p>
-    </div>
+    <h1>Highly Available AWS Multi-Region 3-Tier Architecture</h1>
+    <p>A production-grade AWS 3-tier infrastructure with VPC, ALB, ASG, RDS Multi-AZ + read-replica, CloudFront, Route 53 failover, and WAF — designed with warm-standby DR across regions.</p>
   </section>
 
   <main class="container content">
     <h2>Project Overview</h2>
     <p>
-      This project demonstrates deployment of a production‑grade 3‑tier architecture across two AWS regions (us‑east‑1 primary & us‑west‑2 DR). It includes VPC and subnet design, ALBs, Auto Scaling Groups, Security Groups, RDS Multi‑AZ with cross‑region read‑replica, CloudFront failover, Route 53 health checks, and WAF protection. The implementation follows AWS best practices for high availability and disaster recovery.
+      This project demonstrates an enterprise-level cloud infrastructure spanning two AWS regions (us-east-1 primary & us-west-2 DR). It includes networking, security, load balancing, auto scaling, multi-region database setup, CDN failover, DR routing, and testing. All components follow AWS Well-Architected best practices.
     </p>
 
     <h2>Architecture Diagram</h2>
-    <img src="images/project1-thumb.png" class="project-thumb" alt="Project 1 Thumbnail" style="max-width:100%; border-radius:10px; box-shadow:0 8px 26px rgba(0,0,0,0.08);">
+    <img src="images/project1-thumb.png" class="diagram" alt="AWS Architecture Diagram">
 
-    <h2>High‑Level Steps</h2>
+    <h2>Architecture Breakdown</h2>
     <ol>
-      <li><strong>VPC Setup:</strong> Public + private subnets across 2 AZs in each region, NAT gateways, route tables.</li>
-      <li><strong>Security Layer:</strong> SGs for Bastion, ALBs, app servers, and RDS with least‑privilege rules.</li>
-      <li><strong>Compute Layer:</strong> EC2 golden images, AMIs, and launch templates for frontend/backend.</li>
-      <li><strong>Load Balancing:</strong> Frontend & backend ALBs with HTTPS listeners and ACM certs.</li>
-      <li><strong>RDS Layer:</strong> MySQL Multi‑AZ primary + cross‑region read‑replica for DR.</li>
-      <li><strong>Failover Setup:</strong> Route 53 failover policies + CloudFront origin groups.</li>
-      <li><strong>Security:</strong> AWS WAF applied to CloudFront distribution.</li>
-      <li><strong>Testing:</strong> Simulated regional outage to validate DR behavior.</li>
+      <li><strong>Network Foundation:</strong> Multi-AZ VPC, public/private subnets, NAT, IGW, custom route tables.</li>
+      <li><strong>Security Layers:</strong> Security Groups for ALB, EC2, RDS; IAM roles; least-privilege access.</li>
+      <li><strong>Compute Tier:</strong> EC2 instances with AMIs, Launch Templates, and Auto Scaling Groups.</li>
+      <li><strong>Load Balancing:</strong> HTTPS ALBs for frontend/backend with ACM TLS certificates.</li>
+      <li><strong>Data Tier:</strong> RDS MySQL Multi-AZ primary DB + cross-region read-replica.</li>
+      <li><strong>Global Delivery:</strong> CloudFront CDN with origin failover.</li>
+      <li><strong>DNS & Failover:</strong> Route 53 failover routing with health checks.</li>
+      <li><strong>WAF Protection:</strong> Web ACL with managed rule sets.</li>
+      <li><strong>DR Testing:</strong> Simulated primary region outage to validate failover.</li>
     </ol>
 
     <h2>Tools & Services</h2>
     <ul>
-      <li>AWS: VPC, EC2, ALB, ASG, RDS, Route 53, CloudFront, WAF, ACM</li>
-      <li>OS & Config: Ubuntu, Apache, Node.js, PM2</li>
-      <li>Networking & Security: Subnets, NAT, IGW, SGs, DNS failover</li>
+      <li>AWS — VPC, EC2, ALB, ASG, RDS, CloudFront, WAF, Route 53, IAM, ACM</li>
+      <li>Backend — Node.js, PM2</li>
+      <li>Frontend — Apache/HTML</li>
+      <li>Networking — Subnets, NAT, IGW, routing</li>
     </ul>
 
-    <h2>Responsibilities & Achievements</h2>
-    <ul>
-      <li>Designed multi‑region architecture with warm‑standby DR.</li>
-      <li>Configured failover routing using Route 53 health checks.</li>
-      <li>Implemented CloudFront origin failover for global latency optimization.</li>
-      <li>Automated backend/frontend setup using launch templates.</li>
-      <li>Built RDS architecture supporting cross‑region failover.</li>
-      <li>Documented full deployment steps and DR testing results.</li>
-    </ul>
+    <h2>Outcomes</h2>
+    <p>
+      Delivered a highly available, resilient infrastructure with cross-region fault tolerance. Implemented DR strategy, documented all deployment steps, tested failover, and created a cleanup guide to avoid unnecessary AWS billing.
+    </p>
 
     <h2>Download Full Project Report</h2>
     <p>
-      Download the full detailed documentation and screenshots:<br>
-      <a href="/mnt/data/aws-3-tier-project.pdf" download>Download Project PDF</a>
+      <a class="btn" href="/mnt/data/aws-3-tier-project.pdf" download>Download Detailed PDF</a>
     </p>
 
-    <p style="margin-top:1rem;"><a href="projects.html" class="btn">← Back to Projects</a></p>
+    <p><a href="projects.html" class="btn">← Back to Projects</a></p>
   </main>
 
   <footer>
