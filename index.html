@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rama Krishna Vankini | Portfolio</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rama Krishna Vankini | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<nav class="navbar">
-<div class="logo">RK</div>
-<ul class="nav-links">
-<li><a href="index.html" class="active">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About Me</a></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">RK</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" style="background-image: url('images/bg.jpg');">
+      <div class="hero-text">
+        <h1>Hello, I'm Rama Krishna Vankini</h1>
+        <p>DevOps & Cloud Engineer (Fresher) — AWS, GCP, Azure | Terraform | Docker | Kubernetes | Ansible</p>
+        <a href="about.html" class="btn">About Me</a>
+        <a href="resume.pdf" class="btn" target="_blank">Resume</a>
+      </div>
+    </section>
 
-<main>
-<section class="hero" style="background-image: url('images/bg.jpg');">
-<div class="hero-text">
-<h1>Hello, I'm Rama Krishna Vankini</h1>
-<p>DevOps & Cloud Engineer (Fresher) — AWS, GCP, Azure | Terraform | Docker | Kubernetes | Ansible</p>
-<a href="about.html" class="btn" style="margin-bottom: 10px;">About Me</a>
-<a href="resume.pdf" class="btn" target="_blank">Resume</a>
-</div>
-</section>
-</main>
+    <section class="container projects-preview">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>DevOps Web App Deployment (AWS)</h3>
+          <p>EC2 + RDS deployment with Docker, Ansible automation, and Route 53 private hosted zone.</p>
+          <a href="project1.html" class="btn">View Details</a>
+        </div>
 
+        <div class="project-card">
+          <h3>Multi-Cloud IaC with Terraform</h3>
+          <p>Reusable Terraform modules for AWS/GCP/Azure with remote state and workspaces.</p>
+          <a href="project2.html" class="btn">View Details</a>
+        </div>
 
-<footer>
-<p>© 2025 Rama Krishna Vankini</p>
-</footer>
+        <div class="project-card">
+          <h3>AI Automation & Integration</h3>
+          <p>Prototype connecting ML inference to dashboards with containerized services.</p>
+          <a href="project3.html" class="btn">View Details</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Rama Krishna Vankini</p>
+  </footer>
 </body>
 </html>
