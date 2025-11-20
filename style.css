@@ -21,7 +21,19 @@ body{font-family:Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', 
 .nav-links a.active,.nav-links a:hover{color:#fff;transform:translateY(-2px)}
 
 /* HERO */
-.hero{height:48vh;min-height:300px;max-height:720px;background-size:cover;background-position:50% 35%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero{
+  /* make hero occupy full viewport for a stronger first impression */
+  height:100vh;
+  min-height:520px;
+  max-height:none;
+  background-size:cover;
+  background-position:50% 35%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 160px at 10% 20%, rgba(255,102,0,0.06),transparent 10%), radial-gradient(600px 200px at 90% 80%, rgba(18,164,255,0.04),transparent 12%);z-index:0}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.55));z-index:1}
 .hero-text{position:relative;z-index:2;max-width:920px;padding:1.6rem;text-align:center;color:#fff;animation:enter .7s cubic-bezier(.2,.9,.3,1) both}
