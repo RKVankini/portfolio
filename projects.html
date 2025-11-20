@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Rama Krishna Vankini</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Minimal card/grid overrides to ensure consistent layout */
+    .projects-section{padding:48px 20px}
+    .projects-section h2{text-align:center;margin-bottom:18px}
+
+    .projects-top{display:flex;flex-direction:column;align-items:center;margin-bottom:28px}
+    .projects-top img{max-width:820px;width:100%;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:24px;
+      align-items:start;
+      max-width:1100px;margin:0 auto
+    }
+
+    .project-card{
+      background:#fff;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 8px 26px rgba(12,18,30,0.06);
+      display:flex;flex-direction:column;gap:12px;
+      min-height:260px;
+    }
+
+    .project-thumb{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .project-card h3{font-size:18px;margin:0}
+    .project-card p{color:#555;flex:1;margin:0}
+    .project-card .btn{display:inline-block;margin-top:8px}
+
+    /* Small utility */
+    .muted{color:#6b7280;font-size:0.9rem;text-align:center;margin-top:6px}
+  </style>
 </head>
 <body>
   <header>
@@ -21,34 +54,37 @@
   <main class="container projects-section">
     <h2>My Projects</h2>
 
-    <!-- Optional screenshot (local upload) -->
-    <div style="text-align:center; margin-bottom: 1.5rem;">
-      <img src="images/projects-top.png" alt="project screenshot" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-      <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">Screenshot preview (local upload)</p>
+    <!-- Top screenshot (generated image local path) -->
+    <div class="projects-top">
+      <img src="/mnt/data/A_digital_screenshot_of_a_webpage_section_titled_.png" alt="project screenshot">
+      <p class="muted">Screenshot preview (local upload)</p>
     </div>
 
     <div class="projects-grid">
-<img src="images/project1-thumb.png" alt="AWS 3-Tier Project Thumbnail" style="width:100%; border-radius:10px; margin-bottom:12px;">
-<h3>Highly Available AWS Multi-Region 3-Tier Architecture</h3>
-<p>Implemented a resilient, production‑ready AWS 3‑tier architecture across multiple regions, covering VPC design, Application Load Balancers, Auto Scaling Groups, Multi‑AZ RDS with read replica, CloudFront CDN, Route 53 failover routing, and AWS WAF. Delivered a step‑by‑step deployment guide, a warm‑standby disaster recovery strategy, and a resource cleanup checklist to prevent ongoing charges.</p>
-<a href="project1.html" class="btn">View Project</a>
-</div>
 
+      <!-- Project 1 (card) -->
       <div class="project-card">
-        <h3>Multi-Cloud IaC with Terraform</h3>
-        <p>Reusable Terraform modules for AWS, GCP, and Azure with remote state (S3 + DynamoDB), workspaces, and secrets management.</p>
-        <a href="project2.html" class="btn">View Details</a>
+        <img src="/mnt/data/A_2D_digital_graphic_displays_a_title_and_an_accom.png" alt="Highly Available AWS Multi-Region 3-Tier Architecture" class="project-thumb">
+        <h3>Highly Available AWS Multi-Region 3-Tier Architecture</h3>
+        <p>Implemented a resilient, production-ready AWS 3-tier architecture across multiple regions — VPC, ALB, ASG, Multi-AZ RDS with read-replica, CloudFront origin failover, Route 53 failover routing and WAF. Includes deployment guide and DR playbook.</p>
+        <a class="btn" href="project1.html">View Project</a>
       </div>
 
+      <!-- Project 2 (card) -->
       <div class="project-card">
-  <img src="images/project3-thumb.png" alt="CI/CD Pipeline Thumbnail" style="width:100%; border-radius:10px; margin-bottom:12px;">
-  
-  <h3>CI/CD Pipeline with Jenkins, Terraform, Docker & ArgoCD</h3>
-  
-  <p>Automated CI/CD pipeline deploying containerized applications to Amazon EKS using Jenkins, Docker, SonarQube, Trivy, Terraform, and ArgoCD.</p>
-  
-  <a href="project3.html" class="btn">View Details</a>
-</div>
+        <img src="images/project2-thumb.png" alt="Multi-Cloud IaC with Terraform" class="project-thumb">
+        <h3>Multi-Cloud IaC with Terraform</h3>
+        <p>Reusable Terraform modules for AWS, GCP, and Azure with remote state (S3 + DynamoDB), workspaces, and secrets management. Includes examples and workspace strategy.</p>
+        <a class="btn" href="project2.html">View Details</a>
+      </div>
+
+      <!-- Project 3 (card) -->
+      <div class="project-card">
+        <img src="images/project3-thumb.png" alt="CI/CD Pipeline Thumbnail" class="project-thumb">
+        <h3>CI/CD Pipeline with Jenkins, Terraform, Docker &amp; ArgoCD</h3>
+        <p>Automated CI/CD pipeline deploying containerized apps to Amazon EKS using Jenkins, SonarQube, Trivy, Docker, Terraform and ArgoCD (GitOps) for safe, observable rollouts.</p>
+        <a class="btn" href="project3.html">View Details</a>
+      </div>
 
     </div>
   </main>
@@ -58,4 +94,3 @@
   </footer>
 </body>
 </html>
-
