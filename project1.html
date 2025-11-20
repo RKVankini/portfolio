@@ -1,62 +1,64 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevOps Web App Deployment | Rama Krishna Vankini</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<nav class="navbar">
-<div class="logo">RK</div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About Me</a></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">RK</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero project-hero">
+    <div class="hero-text">
+      <h1>DevOps Web App Deployment (AWS)</h1>
+      <p>Scalable, containerized web application deployed using AWS services, Docker, Kubernetes (POC), and Ansible.</p>
+    </div>
+  </section>
 
-<section class="hero">
-<div class="hero-text">
-<h1>DevOps Web App Deployment (AWS)</h1>
-<p>Scalable, containerized web application deployed using AWS services, Docker, Kubernetes (Minikube for POC), and automated provisioning with Ansible.</p>
-</div>
-</section>
+  <main class="container content">
+    <h2>Project Overview</h2>
+    <p>Deployed frontend (Apache) and backend (Node.js + PM2) on EC2 inside a custom VPC. Backend connects to RDS MySQL. Application containerized with Docker and tested on Minikube for orchestration POC.</p>
 
+    <h2>Key Responsibilities</h2>
+    <ul>
+      <li>Provisioned EC2 instances and configured VPC networking and security groups.</li>
+      <li>Configured RDS MySQL and used AWS Secrets Manager for credentials.</li>
+      <li>Created Dockerfiles and Docker Compose for development and testing.</li>
+      <li>Tested Kubernetes orchestration using Minikube (Deployments, Services).</li>
+      <li>Wrote Ansible playbooks for server setup and service configuration.</li>
+      <li>Maintained GitHub repo with README and deployment steps.</li>
+    </ul>
 
-<main class="container content">
-<h2>Project Overview</h2>
-<p>Deployed frontend (Apache) and backend (Node.js + PM2) on EC2 instances inside a custom VPC. Backend connects to an RDS MySQL instance. Application was containerized using Docker and tested on Kubernetes (Minikube) for orchestration proof-of-concept.</p>
+    <h2>Tech Stack</h2>
+    <ul>
+      <li>AWS: EC2, RDS, Route53</li>
+      <li>Containers: Docker, Kubernetes (Minikube)</li>
+      <li>Automation: Ansible, Bash</li>
+      <li>App: Node.js, Apache</li>
+      <li>Version Control: GitHub</li>
+    </ul>
 
+    <h2>Screenshot Preview</h2>
+    <div style="text-align:center; margin:20px 0;">
+      <img src="/mnt/data/Screenshot (164).png" alt="Project Screenshot" style="max-width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <p style="font-size:0.9rem; color:#666;">Local uploaded screenshot preview</p>
+    </div>
 
-<h2>Key Responsibilities</h2>
-<ul>
-<li>Created EC2 instances and configured networking (VPC, subnets, security groups).</li>
-<li>Configured RDS MySQL and connected the backend securely using AWS Secrets Manager.</li>
-<li>Wrote Dockerfiles and Docker Compose for local development and container testing.</li>
-<li>Tested orchestration using Minikube and kubectl (Deployments, Services).</li>
-<li>Automated server provisioning tasks using Ansible playbooks (package install, service start, environment setup).</li>
-<li>Maintained code and deployment instructions in a GitHub repository with clear README.</li>
-</ul>
+    <a href="projects.html" class="btn">← Back to Projects</a>
+  </main>
 
-
-<h2>Tech Stack</h2>
-<ul>
-<li>Cloud: AWS (EC2, RDS, Route 53)</li>
-<li>Containers: Docker, Kubernetes (Minikube)</li>
-<li>Automation: Ansible, Bash</li>
-<li>App: Node.js, Apache</li>
-<li>CI / Repo: GitHub</li>
-</ul>
-
-
-<h2>Outcome</h2>
-<p>Delivered a reproducible deployment process, improved development-to-deployment parity via containers, and automated provisioning to reduce manual setup time.</p>
-
-
-<a href="projects.html" class="btn">← Back to Projects</a>
-</main>
-
-
-<footer>
-<p>&copy; 2025 Rama Krishna Vankini</p>
-</footer>
+  <footer>
+    <p>© 2025 Rama Krishna Vankini</p>
+  </footer>
 </body>
 </html>
