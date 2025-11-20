@@ -1,103 +1,64 @@
-/* ------------------ HERO IMPROVEMENTS ------------------ */
+/* style.css — Hybrid: professional, subtle animations, lightweight glow */
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box}
 
-/* slightly smaller hero height for better balance on desktop */
-.hero {
-  height: 55vh;               /* was 62vh */
-  min-height: 380px;
-  max-height: 720px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+/* Base */
+:root{
+  --bg:#f6f8fb;
+  --panel:#ffffff;
+  --muted:#6b7280;
+  --accent-1:#ff7a18;
+  --accent-2:#ff6600;
+  --nav-bg:linear-gradient(90deg,#0f1724,#1b263b);
 }
+body{font-family:Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial; background:var(--bg); color:#111827; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.6}
 
-/* darker overlay for better readability on bright/dark images */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.60));
-  z-index: 0;
-}
+/* NAV */
+.navbar{display:flex;justify-content:space-between;align-items:center;background:var(--nav-bg);padding:.7rem 1.2rem;position:sticky;top:0;z-index:120;box-shadow:0 6px 18px rgba(11,22,38,0.18)}
+.logo{font-weight:700;font-size:1.15rem;color:#fff;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));box-shadow:0 8px 20px rgba(255,102,0,0.08)}
+.nav-links{display:flex;gap:1.2rem;list-style:none}
+.nav-links a{color:#dbeafe;text-decoration:none;font-weight:600;padding:6px 8px;transition:color .18s ease,transform .16s ease}
+.nav-links a.active,.nav-links a:hover{color:#fff;transform:translateY(-2px)}
 
-/* center content and limit width */
-.hero-text.container {
-  position: relative;
-  z-index: 2;
-  max-width: 920px;
-  padding: 2rem 1rem;
-  text-align: center;
-  color: #fff;
-}
+/* HERO */
+.hero{height:48vh;min-height:300px;max-height:720px;background-size:cover;background-position:50% 35%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 160px at 10% 20%, rgba(255,102,0,0.06),transparent 10%), radial-gradient(600px 200px at 90% 80%, rgba(18,164,255,0.04),transparent 12%);z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.55));z-index:1}
+.hero-text{position:relative;z-index:2;max-width:920px;padding:1.6rem;text-align:center;color:#fff;animation:enter .7s cubic-bezier(.2,.9,.3,1) both}
+@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero-text h1{font-size:clamp(1.6rem,3.0vw,2.4rem);margin-bottom:.4rem;font-weight:800}
+.hero-sub{font-size:clamp(.95rem,1.1vw,1.02rem);color:rgba(255,255,255,0.95);margin-bottom:1rem;font-weight:300}
 
-/* title and subtitle */
-.hero-text h1 {
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem); /* responsive scaling */
-  margin-bottom: 0.5rem;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  text-shadow: 0 10px 24px rgba(0,0,0,0.5);
-}
+/* Buttons */
+.button-group{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{padding:9px 20px;border-radius:26px;font-weight:700;text-decoration:none;display:inline-block;transition:transform .14s ease,box-shadow .16s ease}
+.btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;box-shadow:0 10px 24px rgba(255,102,0,0.08)}
+.btn-secondary{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.08)}
+.btn:focus{outline:3px solid rgba(255,126,30,0.18);outline-offset:4px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,0.12)}
 
-/* subtitle smaller, lighter */
-.hero-sub {
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-  color: rgba(255,255,255,0.95);
-  margin-bottom: 1.25rem;
-  font-weight: 300;
-  line-height: 1.5;
-}
+/* Container and panels */
+.container{max-width:1100px;margin:2rem auto;padding:0 1.2rem}
+.content{max-width:1000px;margin:28px auto;padding:20px;background:var(--panel);border-radius:10px;box-shadow:0 8px 30px rgba(11,22,38,0.04)}
 
-/* horizontal button layout with gap */
-.button-group {
-  display: inline-flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
-  flex-wrap: wrap;
-}
+/* Projects grid (kept for projects page) */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.project-card{background:linear-gradient(180deg,#fff,#fbfbfd);padding:1.2rem;border-radius:10px;box-shadow:0 8px 24px rgba(11,22,38,0.04);transition:transform .18s ease,box-shadow .18s ease}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(11,22,38,0.08)}
+.project-card h3{margin-bottom:.5rem;color:#0f1724}
+.project-card p{color:var(--muted);font-size:.98rem}
 
-/* alternate button styles */
-.btn {
-  padding: 10px 22px;
-  border-radius: 28px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform .16s ease, box-shadow .18s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-}
+/* About */
+.about-content{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
+.profile-pic{width:200px;border-radius:12px;box-shadow:0 10px 30px rgba(11,22,38,0.06)}
+.about-text{flex:1;color:#334155}
 
-/* primary / secondary colors */
-.btn-primary { background: linear-gradient(90deg,#ff7a18,#ff6600); color: #fff; }
-.btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.08); }
+/* Footer */
+footer{background:#0b1724;color:#cbd5e1;text-align:center;padding:1rem 0;font-size:.95rem}
 
-/* hover */
-.btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.22); }
+/* Accessibility & Reduced motion */
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-/* subtle hero entrance */
-@keyframes heroAppear {
-  from { opacity: 0; transform: translateY(14px) scale(0.995); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-.hero-text.container { animation: heroAppear .9s cubic-bezier(.2,.9,.3,1) both; }
-
-/* NAVBAR TWEAKS - make logo smaller & tighten spacing */
-.logo {
-  font-size: 1.2rem;           /* slightly smaller */
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-.navbar { padding: 0.7rem 1.6rem; }
-
-/* mobile adjustments */
-@media (max-width: 768px) {
-  .hero { height: 48vh; min-height: 300px; }
-  .hero-text h1 { font-size: 1.9rem; }
-  .button-group { gap: 10px; }
-  .btn { padding: 9px 18px; font-size: 0.95rem; }
-}
+/* Responsive */
+@media (max-width:768px){.navbar{padding:.6rem 1rem}.hero{height:44vh}.hero-text h1{font-size:1.9rem}.profile-pic{width:160px}}
+@media (max-width:420px){.nav-links{gap:.7rem}.hero{height:42vh}.hero-text h1{font-size:1.3rem}.container{padding:0 0.9rem}}
