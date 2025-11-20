@@ -1,67 +1,79 @@
-<!doctype html>
-body{font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;background:#f7f9fb;color:#222;padding:32px}
-.hero{display:flex;gap:24px;align-items:center}
-.hero img{width:420px;border-radius:12px;box-shadow:0 8px 30px rgba(20,30,60,0.12)}
-.content{max-width:900px}
-h1{font-size:32px;margin-bottom:6px}
-.meta{color:#556; margin-bottom:18px}
-section{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(12,18,30,0.04);margin-bottom:18px}
-a.btn{display:inline-block;padding:10px 14px;background:#0b5394;color:#fff;border-radius:8px;text-decoration:none}
-.kbd{background:#eef4ff;padding:6px 10px;border-radius:6px;font-family:monospace}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project 1 — Highly Available AWS Multi-Region 3‑Tier Architecture | Rama Krishna Vankini</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<a href="projects.html">← Back to Projects</a>
-<div class="hero" style="margin-top:18px">
-<div class="content">
-<h1>Highly Available AWS Multi-Region 3-Tier Architecture</h1>
-<div class="meta">Role: Infrastructure & DevOps · Tools: AWS (VPC, ALB, ASG, RDS, Route53, CloudFront, WAF) · Deliverables: infra build + DR playbook</div>
-<p>This project demonstrates a production‑grade 3‑tier architecture on AWS with a warm‑standby disaster recovery strategy across two regions (us‑east‑1 primary, us‑west‑2 DR). The repo contains step‑by‑step instructions for VPC/subnets, NAT/IGW, security groups, ALBs, target groups, EC2 + AMI/launch templates, Auto Scaling Groups, RDS (primary + read‑replica), Route 53 failover, CloudFront origin groups, and AWS WAF configuration.</p>
-<p><a class="btn" href="/mnt/data/aws-3-tier-project.pdf">Open Full Project PDF</a></p>
-</div>
-<img src="/mnt/data/project1_thumbnail.png" alt="Project 1 Thumbnail">
-</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">RK</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero project-hero">
+    <div class="hero-text">
+      <h1>Highly Available AWS Multi‑Region 3‑Tier Architecture</h1>
+      <p>End‑to‑end multi‑region 3‑tier infrastructure on AWS with failover using Route 53, CloudFront, ALB, ASG, and Multi‑AZ RDS (read‑replica), built with a warm‑standby DR strategy.</p>
+    </div>
+  </section>
 
-<section>
-<h2>Quick Architecture</h2>
-<p>Three logical layers: Presentation (ALB + CloudFront + static frontend), Application (ASG-backed backend servers behind ALB), Data (RDS multi‑AZ with read‑replica in DR region). Health checks + Route 53 failover and CloudFront origin groups provide automated failover for the frontend/backends while database failover uses read‑replica promotion.</p>
-</section>
+  <main class="container content">
+    <h2>Project Overview</h2>
+    <p>
+      This project demonstrates deployment of a production‑grade 3‑tier architecture across two AWS regions (us‑east‑1 primary & us‑west‑2 DR). It includes VPC and subnet design, ALBs, Auto Scaling Groups, Security Groups, RDS Multi‑AZ with cross‑region read‑replica, CloudFront failover, Route 53 health checks, and WAF protection. The implementation follows AWS best practices for high availability and disaster recovery.
+    </p>
 
+    <h2>Architecture Diagram</h2>
+    <img src="/mnt/data/A_2D_digital_graphic_displays_a_title_and_an_accom.png" alt="AWS 3-Tier Architecture Diagram" style="max-width:100%; border-radius:10px; box-shadow:0 8px 26px rgba(0,0,0,0.08);">
 
-<section>
-<h2>Key Steps (high level)</h2>
-<ul>
-<li>Provision VPC with public + private subnets (8 subnets total across AZs).</li>
-<li>Create NAT Gateways, IGW, route tables, and enable DNS hostnames.</li>
-<li>Configure Security Groups for bastion, ALBs, app servers and RDS (least privilege).</li>
-<li>Launch temp EC2 golden images, configure app & frontend, create AMIs and Launch Templates.</li>
-<li>Create Target Groups, ALBs (frontend & backend) and attach HTTPS listeners with ACM certs.</li>
-<li>Set up RDS (MySQL) primary in us‑east‑1, enable backups and create read‑replica in us‑west‑2.</li>
-<li>Use Route 53 (failover records + health checks) and CloudFront origin groups for cross‑region failover.</li>
-<li>Add WAF Web ACL and rules for CloudFront distribution.</li>
-<li>Test failover by simulating regional outage; document cleanup steps to remove billable resources.</li>
-</ul>
-</section>
+    <h2>High‑Level Steps</h2>
+    <ol>
+      <li><strong>VPC Setup:</strong> Public + private subnets across 2 AZs in each region, NAT gateways, route tables.</li>
+      <li><strong>Security Layer:</strong> SGs for Bastion, ALBs, app servers, and RDS with least‑privilege rules.</li>
+      <li><strong>Compute Layer:</strong> EC2 golden images, AMIs, and launch templates for frontend/backend.</li>
+      <li><strong>Load Balancing:</strong> Frontend & backend ALBs with HTTPS listeners and ACM certs.</li>
+      <li><strong>RDS Layer:</strong> MySQL Multi‑AZ primary + cross‑region read‑replica for DR.</li>
+      <li><strong>Failover Setup:</strong> Route 53 failover policies + CloudFront origin groups.</li>
+      <li><strong>Security:</strong> AWS WAF applied to CloudFront distribution.</li>
+      <li><strong>Testing:</strong> Simulated regional outage to validate DR behavior.</li>
+    </ol>
 
+    <h2>Tools & Services</h2>
+    <ul>
+      <li>AWS: VPC, EC2, ALB, ASG, RDS, Route 53, CloudFront, WAF, ACM</li>
+      <li>OS & Config: Ubuntu, Apache, Node.js, PM2</li>
+      <li>Networking & Security: Subnets, NAT, IGW, SGs, DNS failover</li>
+    </ul>
 
-<section>
-<h2>Files & Artifacts</h2>
-<ul>
-<li>Full walkthrough PDF: <a href="/mnt/data/aws-3-tier-project.pdf">aws-3-tier-project.pdf</a></li>
-<li>Thumbnail image (used on Projects listing): <span class="kbd">/mnt/data/project1_thumbnail.png</span></li>
-</ul>
-</section>
+    <h2>Responsibilities & Achievements</h2>
+    <ul>
+      <li>Designed multi‑region architecture with warm‑standby DR.</li>
+      <li>Configured failover routing using Route 53 health checks.</li>
+      <li>Implemented CloudFront origin failover for global latency optimization.</li>
+      <li>Automated backend/frontend setup using launch templates.</li>
+      <li>Built RDS architecture supporting cross‑region failover.</li>
+      <li>Documented full deployment steps and DR testing results.</li>
+    </ul>
 
+    <h2>Download Full Project Report</h2>
+    <p>
+      Download the full detailed documentation and screenshots:<br>
+      <a href="/mnt/data/aws-3-tier-project.pdf" download>Download Project PDF</a>
+    </p>
 
-<section>
-<h2>Outcome & Notes</h2>
-<p>Completed a resilient 3‑tier infra with warm‑standby DR. The documentation includes step‑by‑step console actions, scripts (user‑data), AMI/backup guidance and a resource cleanup checklist to avoid ongoing charges.</p>
-</section>
+    <p style="margin-top:1rem;"><a href="projects.html" class="btn">← Back to Projects</a></p>
+  </main>
 
-
-<footer>
-<p style="color:#667">Source PDF included.</p>
-</footer>
+  <footer>
+    <p>© 2025 Rama Krishna Vankini</p>
+  </footer>
 </body>
 </html>
