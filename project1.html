@@ -1,64 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevOps Web App Deployment | Rama Krishna Vankini</title>
-  <link rel="stylesheet" href="style.css" />
+<!doctype html>
+body{font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;background:#f7f9fb;color:#222;padding:32px}
+.hero{display:flex;gap:24px;align-items:center}
+.hero img{width:420px;border-radius:12px;box-shadow:0 8px 30px rgba(20,30,60,0.12)}
+.content{max-width:900px}
+h1{font-size:32px;margin-bottom:6px}
+.meta{color:#556; margin-bottom:18px}
+section{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(12,18,30,0.04);margin-bottom:18px}
+a.btn{display:inline-block;padding:10px 14px;background:#0b5394;color:#fff;border-radius:8px;text-decoration:none}
+.kbd{background:#eef4ff;padding:6px 10px;border-radius:6px;font-family:monospace}
+</style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">RK</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
+<a href="projects.html">← Back to Projects</a>
+<div class="hero" style="margin-top:18px">
+<div class="content">
+<h1>AWS 3‑Tier Application Deploy (Warm‑Standby DR)</h1>
+<div class="meta">Role: Infrastructure & DevOps · Tools: AWS (VPC, ALB, ASG, RDS, Route53, CloudFront, WAF) · Deliverables: infra build + DR playbook</div>
+<p>This project demonstrates a production‑grade 3‑tier architecture on AWS with a warm‑standby disaster recovery strategy across two regions (us‑east‑1 primary, us‑west‑2 DR). The repo contains step‑by‑step instructions for VPC/subnets, NAT/IGW, security groups, ALBs, target groups, EC2 + AMI/launch templates, Auto Scaling Groups, RDS (primary + read‑replica), Route 53 failover, CloudFront origin groups, and AWS WAF configuration.</p>
+<p><a class="btn" href="/mnt/data/aws-3-tier-project.pdf">Open Full Project PDF</a></p>
+</div>
+<img src="/mnt/data/project1_thumbnail.png" alt="Project 1 Thumbnail">
+</div>
 
-  <section class="hero project-hero">
-    <div class="hero-text">
-      <h1>DevOps Web App Deployment (AWS)</h1>
-      <p>Scalable, containerized web application deployed using AWS services, Docker, Kubernetes (POC), and Ansible.</p>
-    </div>
-  </section>
 
-  <main class="container content">
-    <h2>Project Overview</h2>
-    <p>Deployed frontend (Apache) and backend (Node.js + PM2) on EC2 inside a custom VPC. Backend connects to RDS MySQL. Application containerized with Docker and tested on Minikube for orchestration POC.</p>
+<section>
+<h2>Quick Architecture</h2>
+<p>Three logical layers: Presentation (ALB + CloudFront + static frontend), Application (ASG-backed backend servers behind ALB), Data (RDS multi‑AZ with read‑replica in DR region). Health checks + Route 53 failover and CloudFront origin groups provide automated failover for the frontend/backends while database failover uses read‑replica promotion.</p>
+</section>
 
-    <h2>Key Responsibilities</h2>
-    <ul>
-      <li>Provisioned EC2 instances and configured VPC networking and security groups.</li>
-      <li>Configured RDS MySQL and used AWS Secrets Manager for credentials.</li>
-      <li>Created Dockerfiles and Docker Compose for development and testing.</li>
-      <li>Tested Kubernetes orchestration using Minikube (Deployments, Services).</li>
-      <li>Wrote Ansible playbooks for server setup and service configuration.</li>
-      <li>Maintained GitHub repo with README and deployment steps.</li>
-    </ul>
 
-    <h2>Tech Stack</h2>
-    <ul>
-      <li>AWS: EC2, RDS, Route53</li>
-      <li>Containers: Docker, Kubernetes (Minikube)</li>
-      <li>Automation: Ansible, Bash</li>
-      <li>App: Node.js, Apache</li>
-      <li>Version Control: GitHub</li>
-    </ul>
+<section>
+<h2>Key Steps (high level)</h2>
+<ul>
+<li>Provision VPC with public + private subnets (8 subnets total across AZs).</li>
+<li>Create NAT Gateways, IGW, route tables, and enable DNS hostnames.</li>
+<li>Configure Security Groups for bastion, ALBs, app servers and RDS (least privilege).</li>
+<li>Launch temp EC2 golden images, configure app & frontend, create AMIs and Launch Templates.</li>
+<li>Create Target Groups, ALBs (frontend & backend) and attach HTTPS listeners with ACM certs.</li>
+<li>Set up RDS (MySQL) primary in us‑east‑1, enable backups and create read‑replica in us‑west‑2.</li>
+<li>Use Route 53 (failover records + health checks) and CloudFront origin groups for cross‑region failover.</li>
+<li>Add WAF Web ACL and rules for CloudFront distribution.</li>
+<li>Test failover by simulating regional outage; document cleanup steps to remove billable resources.</li>
+</ul>
+</section>
 
-    <h2>Screenshot Preview</h2>
-    <div style="text-align:center; margin:20px 0;">
-      <img src="/mnt/data/Screenshot (164).png" alt="Project Screenshot" style="max-width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-      <p style="font-size:0.9rem; color:#666;">Local uploaded screenshot preview</p>
-    </div>
 
-    <a href="projects.html" class="btn">← Back to Projects</a>
-  </main>
+<section>
+<h2>Files & Artifacts</h2>
+<ul>
+<li>Full walkthrough PDF: <a href="/mnt/data/aws-3-tier-project.pdf">aws-3-tier-project.pdf</a></li>
+<li>Thumbnail image (used on Projects listing): <span class="kbd">/mnt/data/project1_thumbnail.png</span></li>
+</ul>
+</section>
 
-  <footer>
-    <p>© 2025 Rama Krishna Vankini</p>
-  </footer>
+
+<section>
+<h2>Outcome & Notes</h2>
+<p>Completed a resilient 3‑tier infra with warm‑standby DR. The documentation includes step‑by‑step console actions, scripts (user‑data), AMI/backup guidance and a resource cleanup checklist to avoid ongoing charges.</p>
+</section>
+
+
+<footer>
+<p style="color:#667">Updated: November 20, 2025 · Source PDF included.</p>
+</footer>
 </body>
 </html>
