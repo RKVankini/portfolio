@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Multi-Cloud IaC | Rama Krishna Vankini</title>
+  <title>RK Weather Dashboard | Rama Krishna Vankini</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,48 +18,83 @@
     </nav>
   </header>
 
+  <!-- ================= HERO ================= -->
   <section class="hero project-hero">
     <div class="hero-text">
-      <h1>Multi-Cloud IaC with Terraform</h1>
-      <p>Reusable, modular Terraform modules for provisioning infrastructure across AWS, GCP, and Azure.</p>
+      <h1>Weather Dashboard (Frontend Project)</h1>
+      <p>
+        A clean, client-side weather application built with JavaScript,
+        powered by the OpenWeather API and deployed on GitHub Pages.
+      </p>
+      <a
+        href="https://rkvankini.github.io/weather-application/"
+        target="_blank"
+        class="btn"
+      >
+        🌐 Live Demo
+      </a>
     </div>
   </section>
 
+  <!-- ================= CONTENT ================= -->
   <main class="container content">
-    <h2>Project Overview</h2>
-    <p>Built modular Terraform code to provision networking, compute, and managed database resources across AWS, GCP, and Azure. Implemented remote state, environment workspaces, and secrets management to support scalable and secure deployments.</p>
 
-    <h2>Key Responsibilities & Features</h2>
+    <h2>Project Overview</h2>
+    <p>
+      The RK Weather Dashboard is a lightweight frontend application designed
+      to deliver real-time weather information with a strong focus on
+      simplicity, performance, and user experience.
+      The project runs entirely in the browser without any backend services
+      and is optimized for static hosting.
+    </p>
+
+    <h2>Key Features & Responsibilities</h2>
     <ul>
-      <li>Designed reusable Terraform modules for VPC / VNet, subnets, routing, and security groups.</li>
-      <li>Configured remote state using AWS S3 and DynamoDB for locking and version control.</li>
-      <li>Implemented Terraform workspaces (dev/test/prod) to separate environments.</li>
-      <li>Used <code>count</code>, <code>for_each</code>, and dynamic blocks to simplify module code and improve scalability.</li>
-      <li>Integrated AWS Secrets Manager for secure database credential handling.</li>
-      <li>Automated post-provisioning tasks using Terraform provisioners and Ansible.</li>
-      <li>Version-controlled all IaC code using GitHub with proper branching and PR reviews.</li>
-      <li>Performed cleanup and cost-optimization using <code>terraform destroy</code> on test environments.</li>
+      <li>Integrated OpenWeather API to fetch real-time weather data.</li>
+      <li>Implemented city-based weather search with validation and error handling.</li>
+      <li>Displayed temperature, humidity, wind speed, and weather conditions.</li>
+      <li>Built a Light / Dark theme toggle with persistent user preference using <code>localStorage</code>.</li>
+      <li>Handled API and network errors gracefully using inline UI messages.</li>
+      <li>Ensured responsive layout for both desktop and mobile devices.</li>
+      <li>Structured configuration using <code>env.js</code> and <code>config.js</code> for maintainability.</li>
+      <li>Deployed the application using GitHub Pages for fast global access.</li>
     </ul>
 
     <h2>Tech Stack</h2>
     <ul>
-      <li>Terraform (modules, workspaces, remote state)</li>
-      <li>Cloud Providers: AWS, GCP, Azure</li>
-      <li>Secrets: AWS Secrets Manager, GCP Secret Manager, Azure Key Vault</li>
-      <li>Automation: Ansible, Bash</li>
+      <li>HTML5, CSS3</li>
+      <li>JavaScript (ES6)</li>
+      <li>OpenWeather API</li>
+      <li>GitHub Pages (Deployment)</li>
     </ul>
 
-    <h2>Screenshot Preview</h2>
-    <div style="text-align:center; margin:20px 0;">
-      <img src="/mnt/data/Screenshot (164).png" alt="Project Screenshot" style="max-width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-      <p style="font-size:0.9rem; color:#666;">Local uploaded screenshot preview</p>
-    </div>
+    <h2>Design & Engineering Decisions</h2>
+    <ul>
+      <li>Kept the project client-side to match the needs of a static portfolio app.</li>
+      <li>Avoided unnecessary frameworks or build tools for clarity and simplicity.</li>
+      <li>Focused on UX, readability, and maintainability over visual clutter.</li>
+      <li>Documented API key visibility honestly as a frontend limitation.</li>
+    </ul>
+
+    <h2>Live Demo</h2>
+    <p>
+      You can view and interact with the live application here:
+    </p>
+    <p>
+      🔗
+      <a
+        href="https://rkvankini.github.io/weather-application/"
+        target="_blank"
+      >
+        https://rkvankini.github.io/weather-application/
+      </a>
+    </p>
 
     <a href="projects.html" class="btn">← Back to Projects</a>
   </main>
 
   <footer>
-    <p>© 2025 Rama Krishna Vankini</p>
+    <p>© 2026 Rama Krishna Vankini</p>
   </footer>
 </body>
 </html>
